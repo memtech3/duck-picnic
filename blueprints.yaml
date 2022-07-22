@@ -49,47 +49,27 @@ form:
           type: editor
           label: Content
         
-        footer.socialMediaIcons:
-          name: socialMediaIcons
+        footer.smallicons:
+          name: smallicons
           type: list
-          label: Social Media Icons
+          label: Small Icons
           fields:
-            .icon:
-              type: iconpicker
-              label: Icon
-            .colorpicker:
-              type: colorpicker
-              label: Icon Color
-            .imageicon:
-              type: mediapicker
-              folder: 'user/pages/images'
-              label: Select an image to use as an icon
-              preview_images: true
-            .imageurlicon:
-              type: text
-              label: Input a url to use as an icon
-            .url:
-              type: text
-              label: Link
-        footer.largeIcons:
-          name: largeIcons
+            .smallicon:
+              type: section
+              title:
+              import@:
+                type: partials/icon
+                context: user://themes/duck-picnic/blueprints
+
+        footer.largeicons:
+          name: largeicons
           type: list
           label: Large Icons
           fields:
-            .icon:
-              type: iconpicker
-              label: Icon
-            .colorpicker:
-              type: colorpicker
-              label: Icon Color
-            .imageicon:
-              type: mediapicker
-              folder: 'user/pages/images'
-              label: Select an image to use as an icon
-              preview_images: true
-            .imageurlicon:
-              type: text
-              label: Input a url to use as an icon
-            .url:
-              type: text
-              label: Link
+            .largeicon:
+              type: section
+              title:
+              import@:
+                type: partials/icon
+                context: user://themes/duck-picnic/blueprints
+            

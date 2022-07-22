@@ -1,37 +1,20 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 <footer>
   <div class="plainflex">
-    {% for socialMediaIcon in grav.theme.config.footer.socialMediaIcons %}
-    {% if socialMediaIcon.icon is not empty %}
-    <a href="{{socialMediaIcon.url}}" style="color:{{socialMediaIcon.colorpicker}}"
-      class="{{socialMediaIcon.icon}} icon"></a>
-    {% endif %}
-    {% if socialMediaIcon.imageicon is not empty %}
-    <a href="{{socialMediaIcon.url}}"><img class="image" src="{{ socialMediaIcon.imageicon }}"
-        alt="{{socialMediaIcon.imageicon.filename}}"></a>
-    {% endif %}
-    {% if socialMediaIcon.imageurlicon is not empty %}
-    <a href="{{socialMediaIcon.url}}"><img class="image" src="{{ socialMediaIcon.imageurlicon }}"
-        alt="{{socialMediaIcon.imageurlicon}}"></a>
-    {% endif %}
+    {% for smallicon in grav.theme.config.footer.smallicons %}
+      {% with {icon:smallicon} %}
+      {% include 'partials/icon.html.twig' %}
+      {% endwith %}
     {% endfor %}
   </div>
   <div class="content">
     {{ grav.theme.config.footer.content|markdown }}
   </div>
   <div class="plainflex">
-    {% for largeIcon in grav.theme.config.footer.largeIcons %}
-    {% if largeIcon.icon is not empty %}
-    <a href="{{largeIcon.url}}" style="color:{{largeIcon.colorpicker}}" class="{{largeIcon.icon}} largeicon"></a>
-    {% endif %}
-    {% if largeIcon.imageicon is not empty %}
-    <a href="{{largeIcon.url}}"><img class="largeimage" src="{{ largeIcon.imageicon }}"
-        alt="{{largeIcon.imageicon.filename}}"></a>
-    {% endif %}
-    {% if largeIcon.imageurlicon is not empty %}
-    <a href="{{largeIcon.url}}"><img class="largeimage" src="{{ largeIcon.imageurlicon }}"
-        alt="{{largeIcon.imageurlicon}}"></a>
-    {% endif %}
+    {% for largeicon in grav.theme.config.footer.largeicons %}
+      {% with {icon:largeicon} %}
+      {% include 'partials/icon.html.twig' %}
+      {% endwith %}
     {% endfor %}
   </div>
 </footer>  
